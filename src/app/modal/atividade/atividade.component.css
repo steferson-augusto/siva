@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+}
+  
+.content{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-hint {
+    color: red;
+}
