@@ -14,6 +14,9 @@ import { DialogConfigComponent } from './dialog-config/dialog-config.component';
 import { MainComponent } from './main/main.component';
 import { environment } from '../environments/environment';
 import { AtividadeComponent } from './modal/atividade/atividade.component';
+import { SidemenuComponent } from './sidemenu/sidemenu.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { AtividadeComponent } from './modal/atividade/atividade.component';
     HomeComponent,
     DialogConfigComponent,
     MainComponent,
-    AtividadeComponent
+    AtividadeComponent,
+    SidemenuComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +36,12 @@ import { AtividadeComponent } from './modal/atividade/atividade.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence({ experimentalTabSynchronization: true }),
     NgxChartsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   entryComponents: [
     DialogConfigComponent,

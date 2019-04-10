@@ -68,29 +68,40 @@
               </mat-form-field>
             </div>
 
-            <div class="container-input" *ngFor="let volume of tabela.valores.volume">
-              <mat-form-field appearance="outline">
-                <mat-label>Altura ({{volume.label}})</mat-label>
-                <input matInput [(ngModel)]="volume.altura" placeholder="Altura média (m)" min="1" type="number"
-                  step="0.1">
-                <mat-icon matSuffix matTooltip="Altura média da plantação no {{volume.label}}">help_outline</mat-icon>
-              </mat-form-field>
 
-              <mat-form-field appearance="outline">
-                <mat-label>Diâmetro ({{volume.label}})</mat-label>
-                <input matInput [(ngModel)]="volume.diametro" placeholder="Diâmetro médio (m)" min="0.1" type="number"
-                  step="0.1">
-                <mat-icon matSuffix matTooltip="Diâmetro médio da plantação no {{volume.label}}">help_outline</mat-icon>
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Manutenção ({{volume.label}})</mat-label>
-                <input matInput [(ngModel)]="volume.manutencao" placeholder="Custo de manutenção (R$ / ha)" min="0"
-                  type="number" step="1">
-                <mat-icon matSuffix matTooltip="Custo de manutenção no {{volume.label}} (R$ / ha)">help_outline
-                </mat-icon>
-              </mat-form-field>
-            </div>
+            <mat-accordion>
+              <mat-expansion-panel *ngFor="let volume of tabela.valores.volume">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{volume.label || uppercase}}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="container-input">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Altura (m)</mat-label>
+                    <input matInput [(ngModel)]="volume.altura" placeholder="Altura média (m)" min="1" type="number"
+                      step="0.1">
+                    <mat-icon matSuffix matTooltip="Altura média da plantação no {{volume.label}}">help_outline</mat-icon>
+                  </mat-form-field>
+    
+                  <mat-form-field appearance="outline">
+                    <mat-label>Diâmetro (m)</mat-label>
+                    <input matInput [(ngModel)]="volume.diametro" placeholder="Diâmetro médio (m)" min="0.1" type="number"
+                      step="0.1">
+                    <mat-icon matSuffix matTooltip="Diâmetro médio da plantação no {{volume.label}}">help_outline</mat-icon>
+                  </mat-form-field>
+    
+                  <mat-form-field appearance="outline">
+                    <mat-label>Manutenção (R$ / ha)</mat-label>
+                    <input matInput [(ngModel)]="volume.manutencao" placeholder="Custo de manutenção (R$ / ha)" min="0"
+                      type="number" step="1">
+                    <mat-icon matSuffix matTooltip="Custo de manutenção no {{volume.label}} (R$ / ha)">help_outline
+                    </mat-icon>
+                  </mat-form-field>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+       
 
           </mat-card-content>
         </mat-card>
